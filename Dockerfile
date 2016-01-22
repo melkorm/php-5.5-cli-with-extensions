@@ -16,6 +16,7 @@ RUN apt-get update \
         libssh2-php \
         php5-pecl-http \
         php5-imagick \
+        php5-xdebug \
     && pecl install memcache \
     && docker-php-ext-enable memcache \
     && docker-php-ext-install -j$(nproc) iconv mcrypt zip intl xmlrpc bcmath soap mbstring \
