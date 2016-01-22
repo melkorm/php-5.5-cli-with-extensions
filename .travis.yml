@@ -5,7 +5,7 @@ before_script:
   - image="melkorm/php-5.5-cli-with-extensions:latest"
 
 script:
-  - docker build -t "$image"
+  - docker build -t "$image" .
 
 after_script:
   - docker images
