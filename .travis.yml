@@ -1,0 +1,13 @@
+language: bash
+services: docker
+
+before_script:
+  - image="melkorm/php-5.5-cli-with-extensions:latest"
+
+script:
+  - docker build -t "$image"
+
+after_script:
+  - docker images
+
+# vim:set et ts=2 sw=2:
