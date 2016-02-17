@@ -28,7 +28,7 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install imap \
     && rm -r /var/lib/apt/lists/* \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && service ssh start
 
 CMD ["php", "-a"]
