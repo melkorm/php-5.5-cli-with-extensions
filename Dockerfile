@@ -19,6 +19,8 @@ RUN apt-get update \
         openssl \
         libc-client-dev \
         libkrb5-dev \
+        libssh2-1-dev \
+        libssh2-php \
         ssh \
     && pecl install imagick xdebug memcache \
     && docker-php-ext-enable imagick memcache xdebug \
