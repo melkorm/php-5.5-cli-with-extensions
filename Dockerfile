@@ -19,6 +19,7 @@ RUN apt-get update \
         openssl \
         libc-client-dev \
         libkrb5-dev \
+        ssh \
     && pecl install imagick xdebug memcache \
     && docker-php-ext-enable imagick memcache xdebug \
     && docker-php-ext-install -j$(nproc) iconv mcrypt zip intl xmlrpc bcmath soap mbstring \
@@ -28,5 +29,6 @@ RUN apt-get update \
     && docker-php-ext-install imap \
     && rm -r /var/lib/apt/lists/* \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && service ssh start
 
 CMD ["php", "-a"]
